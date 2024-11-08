@@ -1,0 +1,139 @@
+/* Aseguramos que el html y el body ocupen el 100% del tamaño de la ventana */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto; /* Permitimos desplazamiento vertical en el body */
+}
+
+/* Estilo para el contenedor #root */
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo para el contenedor principal .pretty-container */
+.pretty-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.pretty-header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 15px; /* Reducido el padding */
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-size: 18px; /* Reducido tamaño de fuente */
+    height: auto;
+}
+
+/* Formulario de login flotante centrado */
+.pretty-login-form {
+    position: fixed;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar perfectamente */
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 80%; /* Formulario más estrecho a la derecha e izquierda */
+    max-width: 400px; /* Máximo tamaño del formulario */
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el contenido principal */
+.pretty-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 40px;
+    flex-grow: 1;
+}
+
+/* Estilo común para las columnas */
+.pretty-column {
+    padding: 15px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    text-align: center;
+    color: #333;
+    flex: 1 1 30%;
+    margin: 0 20px;
+}
+
+/* Estilo específico para las imágenes dentro de las columnas */
+.column-image {
+    width: 100%; /* Las imágenes ocuparán todo el ancho de la columna */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-height: 200px; /* Limita la altura máxima para evitar que se estiren demasiado */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Footer Styling */
+.pretty-footer {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Media Query para Dispositivos Móviles (Pantallas más pequeñas) */
+@media (max-width: 768px) {
+    /* Cambiar la dirección de los elementos en .pretty-content para que se apilen verticalmente */
+    .pretty-content {
+        flex-direction: column;
+        gap: 10px; /* Reducir el espacio entre las columnas */
+        padding: 5px;
+        overflow-y: auto; /* Permitir desplazamiento vertical en el contenido */
+    }
+
+    /* Las columnas deben ocupar el 100% del ancho en pantallas pequeñas */
+    .pretty-column {
+        flex: 1 1 100%;
+        margin: 5px 0; /* Espaciado entre columnas */
+        font-size: 12px; /* Reducir el tamaño de la fuente */
+    }
+
+    /* Ajustar el tamaño del encabezado para pantallas pequeñas */
+    .pretty-header {
+        padding: 5px 10px; /* Reducir el padding para hacer el header más pequeño */
+        font-size: 16px; /* Reducir el tamaño de la fuente */
+        height: auto; /* Aseguramos que el header se ajuste a su contenido */
+        z-index: 10;
+    }
+
+    /* Hacer el formulario más estrecho a la derecha e izquierda */
+    .pretty-login-form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #4A90E2;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 80%; /* El formulario ocupará el 80% del ancho */
+        max-width: 350px; /* Máximo tamaño */
+        z-index: 100;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: move; /* Cambiar cursor para indicar que se puede mover */
+    }
+}
